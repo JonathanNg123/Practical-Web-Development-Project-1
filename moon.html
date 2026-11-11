@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>The Moon</title>
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: linear-gradient(135deg, #111827, #0b0f19, #030712);
+                color: #f3f4f6;
+                min-height: 100vh;
+                text-align: center;
+                padding: 40px 20px;
+                margin: 0;
+            }
+            nav {
+                background: rgba(17, 24, 39, 0.8);
+                border: 1px solid rgba(156, 163, 175, 0.2);
+                padding: 15px;
+                border-radius: 12px;
+                margin-bottom: 40px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            }
+            nav a {
+                color: #9ca3af;
+                margin: 0 8px;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 14px;
+            }
+            nav a:hover {
+                color: #f9fafb;
+                text-shadow: 0 0 8px #d1d5db;
+            }
+            h1 {
+                font-size: 48px;
+                margin-bottom: 20px;
+                color: #e5e7eb;
+                text-shadow: 0 0 20px rgba(229, 231, 235, 0.3);
+            }
+            h2 {
+                color: #9ca3af;
+                margin-top: 40px;
+            }
+            img {
+                border-radius: 10px;
+                border: 2px solid rgba(156, 163, 175, 0.3);
+                margin: 15px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            }
+            ul {
+                max-width: 600px;
+                margin: 20px auto;
+                text-align: left;
+                background: rgba(255, 255, 255, 0.03);
+                padding: 20px 40px;
+                border-radius: 10px;
+                border: 1px solid rgba(156, 163, 175, 0.1);
+            }
+            li {
+                margin-bottom: 10px;
+                line-height: 1.6;
+            }
+            button, input[type="number"] {
+                background: #374151;
+                color: white;
+                border: none;
+                padding: 10px 15px;
+                border-radius: 6px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background 0.2s;
+            }
+            input[type="number"] {
+                background: #1f2937;
+                border: 1px solid #4b5563;
+                margin-bottom: 10px;
+            }
+            button:hover {
+                background: #4b5563;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <a href="The Solar System.html">Return to the Solar System</a><br>
+            <a href="Sun.html">Visit the Sun</a><br>
+            <a href="Mercury.html">Visit Mercury</a><br>
+            <a href="Venus.html">Visit Venus</a><br>
+            <a href="Earth.html">Visit Earth</a><br>
+            <a href="Moon.html">Visit the Moon (You are here!)</a><br>
+            <a href="Mars.html">Visit Mars</a><br>
+            <a href="Jupiter.html">Visit Jupiter</a><br>
+            <a href="Saturn.html">Visit Saturn</a><br>
+            <a href="Uranus.html">Visit Uranus</a><br>
+            <a href="Neptune.html">Visit Neptune</a>
+            </nav>
+        <h1>Welcome to the Moon</h1>
+ 
+        <img src="https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001895/GSFC_20171208_Archive_e001895~orig.jpg" alt="A photo of the Full Moon" width="400">
+
+        <img src="https://eclipse.aas.org/sites/eclipse.aas.org/files/Moon_Phases_NASA_Labels_1120.jpg" alt="The cycle of the lunar phases of the moon" width="400">   
+
+        <h2>About the Moon</h2>
+        <ul>
+            <li>The Moon is the fifth-largest moon in our solar system and the only celestial body beyond Earth visited by humans.</li>
+            <li>It is tidally locked to Earth, meaning the exact same side of the Moon always faces our planet.</li>
+            <li>The Moon has virtually no atmosphere, which leads to extreme temperature swings and a surface heavily scarred by craters.</li>
+            <li>Its gravitational pull is the main force responsible for creating Earth's ocean tides.</li>
+            <li>The Moon is slowly moving away from Earth at a rate of about 1.5 inches (3.8 centimeters) every year.</li>
+        </ul>
+        
+        <div style="margin-top: 20px;">
+            <input type="number" id="user-weight" placeholder="Enter your Earth weight (lbs)">
+            <button onclick="calculateMoonWeight()">Calculate Moon Weight</button>
+            <p id="moon-weight-result" style="margin-top: 10px; font-weight: bold;"></p>
+        </div>
+
+        <script>
+            function calculateMoonWeight() {
+                let weight = document.getElementById("user-weight").value;
+                if(weight === "" || weight <= 0) {
+                    document.getElementById("moon-weight-result").textContent = "Please enter a valid weight!";
+                } else {
+                    // Moon gravity is roughly 0.166 of Earth's
+                    let moonWeight = (weight * 0.166).toFixed(1);
+                    document.getElementById("moon-weight-result").textContent = "On the Moon, you would weigh " + moonWeight + " lbs! (About 1/6th of your Earth weight)";
+                }
+            }
+        </script>
+
+    </body>
+</html>
