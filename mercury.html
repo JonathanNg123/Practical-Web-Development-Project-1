@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Mercury</title>
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: linear-gradient(135deg, #1e293b, #0f172a, #090d16);
+                color: #e2e8f0;
+                min-height: 100vh;
+                text-align: center;
+                padding: 40px 20px;
+                margin: 0;
+            }
+            nav {
+                background: rgba(30, 41, 59, 0.8);
+                border: 1px solid rgba(148, 163, 184, 0.2);
+                padding: 15px;
+                border-radius: 12px;
+                margin-bottom: 40px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            }
+            nav a {
+                color: #94a3b8;
+                margin: 0 8px;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 14px;
+            }
+            nav a:hover {
+                color: #f1f5f9;
+                text-shadow: 0 0 8px #94a3b8;
+            }
+            h1 {
+                font-size: 48px;
+                margin-bottom: 20px;
+                color: #cbd5e1;
+                text-shadow: 0 0 15px rgba(203, 213, 225, 0.3);
+            }
+            h2 {
+                color: #94a3b8;
+                margin-top: 40px;
+            }
+            img {
+                border-radius: 10px;
+                border: 2px solid rgba(148, 163, 184, 0.3);
+                margin: 15px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            }
+            ul {
+                max-width: 600px;
+                margin: 20px auto;
+                text-align: left;
+                background: rgba(255, 255, 255, 0.03);
+                padding: 20px 40px;
+                border-radius: 10px;
+                border: 1px solid rgba(148, 163, 184, 0.1);
+            }
+            li {
+                margin-bottom: 10px;
+                line-height: 1.6;
+            }
+            button {
+                background: #475569;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 6px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background 0.2s;
+            }
+            button:hover {
+                background: #334155;
+            }
+        </style>
+        </style>
+    </head>
+    <body>
+        <nav>
+            <a href="The Solar System.html">Return to the Solar System</a><br>
+            <a href="sun.html">Visit the Sun</a><br>
+            <a href="mercury.html">Visit Mercury (You are here!)</a><br>
+            <a href="venus.html">Visit Venus</a><br>
+            <a href="earth.html">Visit Earth</a><br>
+            <a href="moon.html">Visit the Moon</a><br>
+            <a href="mars.html">Visit Mars</a><br>
+            <a href="jupiter.html">Visit Jupiter</a><br>
+            <a href="saturn.html">Visit Saturn</a><br>
+            <a href="uranus.html">Visit Uranus</a><br>
+            <a href="neptune.html">Visit Neptune</a><br>
+            </nav>
+        <h1>Welcome to Mercury</h1>
+
+        <img src="https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001870/GSFC_20171208_Archive_e001870~orig.png" alt="A color image of Mercury, showing off its various craters" width="400">
+
+        <img src="https://images-assets.nasa.gov/image/PIA11406/PIA11406~orig.jpg" alt="Side-by-side of Mercury in black and white and in color" width="400">   
+
+        <h2>Facts on Mercury</h2>
+        <ul>
+            <li>Mercury is the smallest planet in our solar system and the closest to the Sun.</li>
+            <li>A year on Mercury is very short—it orbits the Sun in just 88 Earth days.</li>
+            <li>Despite being closest to the Sun, Venus is actually hotter, but Mercury has extreme temperature swings from -290°F to 800°F.</li>
+            <li>Mercury has a rocky, heavily cratered surface similar to Earth's Moon.</li>
+            <li>Mercury has zero moons and zero rings.</li>
+        </ul>
+        
+        <div style="margin-top: 20px;">
+            <p>Explore Mercury's extreme temperature contrast:</p>
+            <button onclick="showTemp('day')">View Day Side</button>
+            <button onclick="showTemp('night')">View Night Side</button>
+            <p id="temp-result" style="margin-top: 10px; font-weight: bold; min-height: 30px;"></p>
+        </div>
+
+        <script>
+            function showTemp(side) {
+                let text = "";
+                if (side === 'day') text = "Day Side: A scorching 800°F (430°C) — hot enough to melt lead!";
+                else if (side === 'night') text = "Night Side: A freezing -290°F (-180°C) due to having virtually no atmosphere to trap heat.";
+                document.getElementById("temp-result").textContent = text;
+            }
+        </script>
+
+    </body>
+</html>
