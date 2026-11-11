@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Solar System</title>
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: radial-gradient(circle at center, #0f172a 0%, #020617 100%);
+                color: #f8fafc;
+                min-height: 100vh;
+                text-align: center;
+                padding: 40px 20px;
+                margin: 0;
+            }
+            nav {
+                background: rgba(15, 23, 42, 0.8);
+                border: 1px solid rgba(255, 215, 0, 0.2);
+                padding: 15px;
+                border-radius: 12px;
+                margin-bottom: 40px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            }
+            nav a {
+                color: #ffd700;
+                margin: 0 8px;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 14px;
+                transition: color 0.2s;
+            }
+            nav a:hover {
+                color: #fff;
+                text-shadow: 0 0 8px #ffd700;
+            }
+            h1 {
+                font-size: 48px;
+                margin-bottom: 20px;
+                color: #ffd700;
+                text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            }
+            h2 {
+                color: #38bdf8;
+                margin-top: 40px;
+            }
+            img {
+                border-radius: 10px;
+                border: 2px solid rgba(255, 215, 0, 0.3);
+                margin: 15px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            }
+            ul {
+                max-width: 600px;
+                margin: 20px auto;
+                text-align: left;
+                background: rgba(255, 255, 255, 0.03);
+                padding: 20px 40px;
+                border-radius: 10px;
+                border: 1px solid rgba(255,255,255,0.05);
+            }
+            li {
+                margin-bottom: 10px;
+                line-height: 1.6;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <a href="The Solar System.html">The Solar System</a><br>        
+            <a href="Sun.html">Visit the Sun</a><br>
+            <a href="Mercury.html">Visit Mercury</a><br>
+            <a href="Venus.html">Visit Venus</a><br>
+            <a href="Earth.html">Visit Earth</a><br>
+            <a href="Moon.html">Visit the Moon</a><br>
+            <a href="Mars.html">Visit Mars</a><br>
+            <a href="Jupiter.html">Visit Jupiter</a><br>
+            <a href="Saturn.html">Visit Saturn</a><br>
+            <a href="Uranus.html">Visit Uranus</a><br>
+            <a href="Neptune.html">Visit Neptune</a>
+        </nav>
+
+        <h1 ondblclick="window.location.href='pluto.html'">Welcome to our Solar System</h1>
+        
+        <img src="https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia11/pia11800/PIA11800.jpg" alt="The Solar System, image inaccurate, mainly used to depict and represent the planets with some detail" width="400">
+
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrRMF1KVCVV2Gj3pWGWHkK8ywtMeECqdzh7K6G9AEHYqjXhPCtdxESfccR&s=10" alt="Collection of the sharpest images captured of the planets in our Solar System" width="400">   
+
+        <h2>About the Solar System</h2>
+        <ul>
+            <li>Our solar system formed approximately 4.6 billion years ago from the gravitational collapse of a giant interstellar gas cloud.</li>
+            <li>It is anchored by the Sun and contains eight planets, numerous dwarf planets, over 200 known moons, and countless asteroids and comets.</li>
+            <li>All eight planets orbit the Sun in an elliptical path and travel in the same counter-clockwise direction.</li>
+            <li>The solar system is located in the Orion Arm of the Milky Way galaxy, taking about 230 million years to complete one galactic orbit.</li>
+            <li>It stretches across billions of miles, extending from the innermost planets all the way out past the Kuiper Belt.</li>
+        </ul>
+        <div style="margin-top: 20px;">
+            <label for="planet-select">Quick Preview a Celestial Body:</label><br>
+            <select id="planet-select" onchange="showPlanetPreview()" style="margin-top: 5px; padding: 5px; border-radius: 4px;">
+                <option value="">-- Choose one --</option>
+                <option value="sun">The Sun</option>
+                <option value="mercury">Mercury</option>
+                <option value="venus">Venus</option>
+                <option value="earth">Earth</option>
+                <option value="moon">The Moon</option>
+                <option value="mars">Mars</option>
+                <option value="jupiter">Jupiter</option>
+                <option value="saturn">Saturn</option>
+                <option value="uranus">Uranus</option>
+            </select>
+            <p id="planet-preview" style="margin-top: 10px; font-style: italic; min-height: 30px;"></p>
+        </div>
+
+        <script>
+            function showPlanetPreview() {
+                let choice = document.getElementById("planet-select").value;
+                let text = "";
+                if (choice === "sun") text = "The massive star at the center holding our entire solar system together.";
+                else if (choice === "mercury") text = "The smallest planet, marked by extreme craters and wild temperature swings.";
+                else if (choice === "venus") text = "A scorching world wrapped in thick clouds of toxic gas with a runaway greenhouse effect.";
+                else if (choice === "earth") text = "Our home world, the only known planet to harbor abundant life and liquid oceans.";
+                else if (choice === "moon") text = "Earth's loyal rocky companion, responsible for pulling our ocean tides.";
+                else if (choice === "mars") text = "The Red Planet, featuring rusty iron-rich dust and the largest volcano in the solar system.";
+                else if (choice === "jupiter") text = "The largest planet, famous for its Great Red Spot and dozens of moons.";
+                else if (choice === "saturn") text = "The ringed jewel of the system, known for its stunning and complex icy ring rings.";
+                else if (choice === "uranus") text = "An icy giant that rotates completely on its side.";
+                document.getElementById("planet-preview").textContent = text;
+            }
+        </script>
+    </body>
+</html>

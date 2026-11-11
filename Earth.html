@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Earth</title>
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: linear-gradient(135deg, #0c4a6e, #032d4a, #020617);
+                color: #f0f9ff;
+                min-height: 100vh;
+                text-align: center;
+                padding: 40px 20px;
+                margin: 0;
+            }
+            nav {
+                background: rgba(12, 74, 110, 0.7);
+                border: 1px solid rgba(56, 189, 248, 0.3);
+                padding: 15px;
+                border-radius: 12px;
+                margin-bottom: 40px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            }
+            nav a {
+                color: #7dd3fc;
+                margin: 0 8px;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 14px;
+            }
+            nav a:hover {
+                color: #fff;
+                text-shadow: 0 0 8px #38bdf8;
+            }
+            h1 {
+                font-size: 48px;
+                margin-bottom: 20px;
+                color: #38bdf8;
+                text-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+            }
+            h2 {
+                color: #34d399;
+                margin-top: 40px;
+            }
+            img {
+                border-radius: 10px;
+                border: 2px solid rgba(56, 189, 248, 0.3);
+                margin: 15px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            }
+            ul {
+                max-width: 600px;
+                margin: 20px auto;
+                text-align: left;
+                background: rgba(56, 189, 248, 0.05);
+                padding: 20px 40px;
+                border-radius: 10px;
+                border: 1px solid rgba(56, 189, 248, 0.2);
+            }
+            li {
+                margin-bottom: 10px;
+                line-height: 1.6;
+            }
+            button, input[type="date"] {
+                background: #0284c7;
+                color: white;
+                border: none;
+                padding: 10px 15px;
+                border-radius: 6px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background 0.2s;
+            }
+            input[type="date"] {
+                background: #0f172a;
+                border: 1px solid #38bdf8;
+                margin-bottom: 10px;
+            }
+            button:hover {
+                background: #0369a1;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <a href="The Solar System.html">Return to the Solar System</a><br>
+            <a href="Sun.html">Visit the Sun</a><br>
+            <a href="Mercury.html">Visit Mercury</a><br>
+            <a href="Venus.html">Visit Venus</a><br>
+            <a href="Earth.html">Visit Earth (You are here!)</a><br>
+            <a href="Moon.html">Visit the Moon</a><br>
+            <a href="Mars.html">Visit Mars</a><br>
+            <a href="Jupiter.html">Visit Jupiter</a><br>
+            <a href="Saturn.html">Visit Saturn</a><br>
+            <a href="Uranus.html">Visit Uranus</a><br>
+            <a href="Neptune.html">Visit Neptune</a>
+        </nav>
+        <h1>Welcome to Earth</h1>
+
+        <img src="https://images-assets.nasa.gov/image/PIA18033/PIA18033~orig.jpg" alt="One of the more detailed images of the Earth yet created" width="400">
+
+        <img src="https://images-assets.nasa.gov/image/PIA17170/PIA17170~orig.jpg" alt="A photo of the Earth and the Moon from Saturn's orbit, magnified five times" width="400">   
+
+        <h2>About Earth</h2>
+        <ul>
+            <li>Earth is the third planet from the Sun and the only known astronomical object in the universe to harbor life.</li>
+            <li>Approximately 71% of Earth's surface is covered in water, with oceans holding about 96.5% of all Earth's water.</li>
+            <li>Its atmosphere is composed of roughly 78% nitrogen and 21% oxygen, which creates the optimal conditions for living organisms.</li>
+            <li>Earth completes one rotation on its axis every 24 hours (a day) and orbits the Sun once every 365.25 days (a year).</li>
+            <li>Earth has one natural satellite, which we call the Moon.</li>
+        </ul>
+        
+        <div style="margin-top: 20px;">
+            <label for="birth-date">Enter your birth date:</label><br>
+            <input type="date" id="birth-date" style="margin-top: 5px;">
+            <button onclick="calculateExactDays()">Calculate Exact Days on Earth</button>
+            <p id="earth-days-result" style="margin-top: 10px; font-weight: bold;"></p>
+        </div>
+
+        <script>
+            function calculateExactDays() {
+                let dateInput = document.getElementById("birth-date").value;
+                
+                if (!dateInput) {
+                    document.getElementById("earth-days-result").textContent = "Please select a valid date!";
+                    return;
+                }
+
+                let birthDate = new Date(dateInput);
+                let today = new Date();
+
+                // Check if the date is in the future
+                if (birthDate > today) {
+                    document.getElementById("earth-days-result").textContent = "That date is in the future!";
+                    return;
+                }
+
+                // Calculate the difference in milliseconds
+                let diffTime = today - birthDate;
+                
+                // Convert milliseconds to days (1000 ms * 60 sec * 60 min * 24 hours)
+                let diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+                document.getElementById("earth-days-result").textContent = "You have lived for approximately " + diffDays.toLocaleString() + " exact Earth days!";
+            }
+        </script>
+    </body>
+</html>
